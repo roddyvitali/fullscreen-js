@@ -1,5 +1,5 @@
 {
-  "name": "fullscreen-js",
+  "name": "@roddyvitali/fullscreen-js",
   "version": "0.0.2",
   "description": "Fullscreen DOM in Javascript",
   "main": "dist/src/fullscreen.js",
