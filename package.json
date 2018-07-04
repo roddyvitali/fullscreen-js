@@ -1,0 +1,25 @@
+{
+  "name": "fullscreen-js",
+  "version": "0.0.1",
+  "description": "Fullscreen DOM in Javascript",
+  "main": "dist/src/fullscreen.js",
+  "scripts": {
+    "build": "babel src/fullscreen.js -d dist"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "fullscreen",
+    "screenfull",
+    "browser",
+    "lib",
+    "library",
+    "Codetzi"
+  ],
+  "author": "Roddy Vitali <roddicks@gmail.com> (https://twitter.com/roddyvitali)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
