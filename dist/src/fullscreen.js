@@ -1,35 +1,40 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var STATICS = {
-  isFSE: [document.fullscreenElement, document.mozFullscreenElement, document.webkitFullscreenElement, document.msFullscreenElement],
-  FSE: [document.fullscreenEnabled, document.mozFullScreenEnabled, document.webkitFullscreenEnabled, document.msFullscreenEnabled],
+  isFSE: ['fullscreenElement', 'mozFullscreenElement', 'webkitFullscreenElement', 'msFullscreenElement'],
+  FSE: ['fullscreenEnabled', 'mozFullScreenEnabled', 'webkitFullscreenEnabled', 'msFullscreenEnabled'],
   FSC: ['fullscreenchange', 'mozfullscreenchange', 'webkitfullscreenchange', 'msfullscreenchange'],
   RFS: ['requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullScreen', 'msRequestFullscreen'],
   EFS: ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
 };
 
 var isFullscreen = function isFullscreen() {
-  var isFSE = STATICS.isFSE;
-  var result = false;
+  var isFSE = STATICS.isFSE,
+      result = false;
 
   isFSE.forEach(function (item) {
-    return function (item) {
-      return result = true;
-    };
+    if (item in document) {
+      return document[item] ? result = true : result = false;
+    }
   });
+
+  return result;
 };
 
 var isFullscreenEnabled = function isFullscreenEnabled() {
-  var FSE = STATICS.FSE;
-  var result = false;
+  var FSE = STATICS.FSE,
+      result = false;
 
-  FSE.forEach(function (element) {
-    return function (element) {
-      return result = true;
-    };
+  FSE.forEach(function (item) {
+    if (item in document) {
+      return document[item] ? result = true : result = false;
+    }
   });
+
+  return result;
 };
 
 var listenFullScreen = function listenFullScreen(callback) {
@@ -75,8 +80,4 @@ var fullscreen = {
   exit: exitFullScreen
 };
 
-if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
-  module.exports = fullscreen;
-} else {
-  fullscreen = fullscreen;
-}
+exports.default = fullscreen;

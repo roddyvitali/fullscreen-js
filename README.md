@@ -3,9 +3,13 @@
 ## Fullscreen
 Plugin for add the mode fullscreen in your app
 
+## Install
+```
+npm install roddyvitali/fullscreen-js
+```
 ## Examples
 ```javascript
-import fullscreen from 'fullscreen'
+import fullscreen from '@roddyvitali/fullscreen-js'
 
 fullscreen.is() // Return true if the body or element is in mode fullscreen
 fullscreen.enabled() // Return true if API is enabled
