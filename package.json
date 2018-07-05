@@ -1,6 +1,6 @@
 {
-  "name": "roddyvitali/fullscreen-js",
-  "version": "0.0.4",
+  "name": "@roddyvitali/fullscreen-js",
+  "version": "0.0.5",
   "description": "Fullscreen DOM in Javascript",
   "main": "dist/src/fullscreen.js",
   "scripts": {
